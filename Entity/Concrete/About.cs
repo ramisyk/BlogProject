@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entity.Concrete
 {
-    class About
+    public class About
     {
         [Key]
         public int AboutId { get; set; }
