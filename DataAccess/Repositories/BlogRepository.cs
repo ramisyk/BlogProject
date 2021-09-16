@@ -11,9 +11,7 @@ namespace DataAccess.Repositories
     public class BlogRepository : IBlogDal
     {
         public void AddCategory(Blog blog)
-        {
-            using var c = new Contact();
-            
+        {            
 
         }
 

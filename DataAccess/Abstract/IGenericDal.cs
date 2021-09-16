@@ -8,11 +8,11 @@ namespace DataAccess.Abstract
 {
     public interface IGenericDal<T> where T : class 
     {
-        void Insert(T entity);
+        void Add(T entity);
         void Delete(T entity);
         void Update(T entity);
-        List<T> GetListAll(T entity);
-        T GetById();
+        List<T> GetAll();
+        T GetById(int id);
         
     }
 }

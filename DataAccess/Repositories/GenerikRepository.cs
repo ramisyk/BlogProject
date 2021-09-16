@@ -1,4 +1,5 @@
 ﻿using DataAccess.Abstract;
+using DataAccess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,27 +13,35 @@ namespace DataAccess.Repositories
     {
         public void Delete(T entity)
         {
-            throw new NotImplementedException();
+            using var context = new Context();
+            context.Remove(entity);
+            context.SaveChanges();
         }
 
-        public T GetById()
+        public T GetById(int id)
         {
-            throw new NotImplementedException();
+            using var context = new Context();
+            return context.Set<T>().Find(id);
         }
 
-        public List<T> GetListAll(T entity)
+        public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            using var context = new Context();
+            return context.Set<T>().ToList();
         }
 
-        public void Insert(T entity)
+        public void Add(T entity)
         {
-            throw new NotImplementedException();
+            using var context = new Context();
+            context.Add(entity);
+            context.SaveChanges();
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            using var context = new Context();
+            context.Update(entity);
+            context.SaveChanges();
         }
     }
 }
