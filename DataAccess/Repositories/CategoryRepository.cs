@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    class CategoryRepository : ICategoryDal
+    public class CategoryRepository : ICategoryDal
     {
         Context c = new Context();
-        public void AddCategory(Category category)
+        public void Add(Category category)
         {
             c.Add(category);
             c.SaveChanges();
         }
 
-        public void DeleteCategory(Category category)
+        public void Delete(Category category)
         {
             c.Remove(category);
             c.SaveChanges();
@@ -28,12 +28,12 @@ namespace DataAccess.Repositories
             return c.Categories.Find(categoryId);
         }
 
-        public List<Category> ListAllCategories()
+        public List<Category> GetAll()
         {
             return c.Categories.ToList();
         }
 
-        public void UpdateCategory(Category category)
+        public void Update(Category category)
         {
             c.Update(category);
             c.SaveChanges();

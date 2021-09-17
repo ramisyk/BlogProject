@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Concrete
+namespace Buesiness.Abstract
 {
-    public interface ICategoryDal
+    public interface ICategoryService
     {
-        List<Category> GetAll();
         void Add(Category category);
         void Delete(Category category);
         void Update(Category category);
-        Category GetById(int categoryId);
+
+        List<Category> GetAll();
+        Category GetById(int id);
     }
 }
