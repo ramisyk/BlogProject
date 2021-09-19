@@ -1,4 +1,5 @@
 ﻿using Buesiness.Abstract;
+using DataAccess.EntityFtramework;
 using DataAccess.Repositories;
 using Entity.Concrete;
 using System;
@@ -11,15 +12,20 @@ namespace Buesiness.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        GenerikRepository<Category> repo = new GenerikRepository<Category>();
+        EfCategoryRepository efCategoryRepository;
+        public CategoryManager()
+        {
+            efCategoryRepository = new EfCategoryRepository();
+        }
+
         public void Add(Category category)
         {
-            throw new NotImplementedException();
+            efCategoryRepository.Add(category);
         }
 
         public void Delete(Category category)
         {
-            throw new NotImplementedException();
+            efCategoryRepository.Delete(category);
         }
 
         public List<Category> GetAll()
