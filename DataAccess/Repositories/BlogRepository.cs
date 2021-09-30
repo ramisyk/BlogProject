@@ -10,12 +10,27 @@ namespace DataAccess.Repositories
 {
     public class BlogRepository : IBlogDal
     {
+        public void Add(Blog entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddCategory(Blog blog)
         {            
 
         }
 
+        public void Delete(Blog entity)
+        {
+            throw new NotImplementedException();
+        }
+
         public void DeleteCategory(Blog blog)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Blog> GetAll()
         {
             throw new NotImplementedException();
         }
@@ -26,6 +41,11 @@ namespace DataAccess.Repositories
         }
 
         public List<Blog> ListAllCategories()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Blog entity)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,5 @@
 ﻿using Buesiness.Abstract;
+using DataAccess.Abstract;
 using DataAccess.EntityFtramework;
 using DataAccess.Repositories;
 using Entity.Concrete;
@@ -12,35 +13,38 @@ namespace Buesiness.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        EfCategoryRepository efCategoryRepository;
-        public CategoryManager()
+        ICategoryDal _categoryDal;
+
+        public CategoryManager(ICategoryDal categoryDal)
         {
-            efCategoryRepository = new EfCategoryRepository();
+            _categoryDal = categoryDal;
         }
+
 
         public void Add(Category category)
         {
-            efCategoryRepository.Add(category);
+            _categoryDal.Add(category);
         }
 
         public void Delete(Category category)
         {
-            efCategoryRepository.Delete(category);
+            _categoryDal.Delete(category);
         }
 
         public List<Category> GetAll()
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetAll();
         }
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryDal.GetById(id);
         }
 
         public void Update(Category category)
         {
-            throw new NotImplementedException();
+            _categoryDal.Update(category);
         }
+
     }
 }

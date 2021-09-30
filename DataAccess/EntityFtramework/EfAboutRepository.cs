@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFtramework
 {
-    public class EfAboutRepository : GenerikRepository<About>, IAboutDal
+    public class EfAboutRepository : GenericRepository<About>, IAboutDal
     {
     }
 }
