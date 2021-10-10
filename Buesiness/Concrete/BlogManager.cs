@@ -38,6 +38,11 @@ namespace Buesiness.Concrete
             throw new NotImplementedException();
         }
 
+        public List<Blog> GetWithCategory()
+        {
+            return _blogDal.GetWithCategory();
+        }
+
         public void Update(Blog blog)
         {
             throw new NotImplementedException();

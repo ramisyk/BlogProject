@@ -13,7 +13,7 @@ namespace Presentation.Controllers
         BlogManager blogManager = new BlogManager(new EfBlogRepository());
         public IActionResult Index()
         {
-            var results = blogManager.GetAll();
+            var results = blogManager.GetWithCategory();
             return View(results);
         }
     }

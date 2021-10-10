@@ -14,6 +14,7 @@ namespace Buesiness.Abstract
         void Update(Blog blog);
 
         List<Blog> GetAll();
+        List<Blog> GetWithCategory();
         Blog GetById(int id);
     }
 }
