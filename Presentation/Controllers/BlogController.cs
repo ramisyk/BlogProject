@@ -16,5 +16,10 @@ namespace Presentation.Controllers
             var results = blogManager.GetWithCategory();
             return View(results);
         }
+
+        public IActionResult BlogDetails(int id)
+        {
+            return View();
+        }
     }
 }
