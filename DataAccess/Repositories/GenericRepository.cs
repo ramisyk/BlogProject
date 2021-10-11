@@ -3,6 +3,7 @@ using DataAccess.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,12 +25,6 @@ namespace DataAccess.Repositories
             return context.Set<T>().Find(id);
         }
 
-        public List<T> GetAll()
-        {
-            using var context = new Context();
-            return context.Set<T>().ToList();
-        }
-
         public void Add(T entity)
         {
             using var context = new Context();
@@ -42,6 +37,12 @@ namespace DataAccess.Repositories
             using var context = new Context();
             context.Update(entity);
             context.SaveChanges();
+        }
+
+        public List<T> GetAll(Expression<Func<T, bool>> filter = null)
+        {
+            using var context = new Context();
+            return context.Set<T>().Where(filter).ToList();
         }
     }
 }
