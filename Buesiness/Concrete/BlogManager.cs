@@ -35,7 +35,7 @@ namespace Buesiness.Concrete
 
         public Blog GetById(int id)
         {
-            throw new NotImplementedException();
+            return _blogDal.GetById(id);
         }
 
         public List<Blog> GetWithCategory()

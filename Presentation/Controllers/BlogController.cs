@@ -17,9 +17,10 @@ namespace Presentation.Controllers
             return View(results);
         }
 
-        public IActionResult BlogDetails(int id)
+        public IActionResult BlogReadAll(int id)
         {
-            return View();
+            var results = blogManager.GetById(id);
+            return View(results);
         }
     }
 }
