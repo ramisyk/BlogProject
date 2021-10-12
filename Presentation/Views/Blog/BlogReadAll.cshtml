@@ -58,10 +58,10 @@
                         </p>
                     </div>
 
+                    @await Component.InvokeAsync("CommentList")
 
-
-                    @await Html.PartialAsync("~/Views/Comment/PartialListCommentByBlog.cshtml")
-                    @await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")
+                    @*@await Html.PartialAsync("~/Views/Comment/PartialListCommentByBlog.cshtml")*@
+                    @*@await Html.PartialAsync("~/Views/Comment/PartialAddComment.cshtml")*@
 
 
                 </div>
