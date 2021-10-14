@@ -33,7 +33,7 @@ namespace Buesiness.Concrete
 
         public List<Category> GetAll()
         {
-            return _categoryDal.GetAll();
+            return _categoryDal.GetAll(c=>c.CategoryStatus==true);
         }
 
         public Category GetById(int id)
