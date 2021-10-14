@@ -19,6 +19,7 @@ namespace Presentation.Controllers
 
         public IActionResult BlogReadAll(int id)
         {
+            ViewBag.i = id;
             var results = blogManager.GetById(id);
             return View(results);
         }
