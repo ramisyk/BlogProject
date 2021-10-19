@@ -21,7 +21,7 @@ namespace Presentation.Controllers
         [HttpPost]
         public IActionResult Index()
         {
-
+            return View();
         }
     }
 }
