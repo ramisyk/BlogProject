@@ -4,6 +4,9 @@
     Layout = "~/Views/Shared/UserLayout.cshtml";
 }
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
 <section class="main-content-w3layouts-agileits">
     <div class="container">
         <h3 class="tittle">Register Now</h3>
@@ -41,4 +44,12 @@
             </div>
         </div>
     </div>
+    <br />
+    <button class="btn btn-info" id="btn1">Butoın1</button>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $('#btn1').click(function () {
+            swal("Hello world!");
+        });
+    </script>
 </section>
