@@ -1,6 +1,8 @@
 ﻿using Buesiness.Concrete;
+using Buesiness.ValidationRules;
 using DataAccess.Repositories;
 using Entity.Concrete;
+using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,7 +17,7 @@ namespace Presentation.Controllers
         WriterManager writerManager = new WriterManager(new EfWriterRepository());
 
         //The method names that gefined get and post atributes for register operations, have to be same
-        
+
         //Run when page loaded
         [HttpGet]
         public IActionResult Index()
@@ -27,10 +29,25 @@ namespace Presentation.Controllers
         [HttpPost]
         public IActionResult Index(Writer writer)
         {
-            writer.WriterStatus = true;
-            writer.WriterAbout = "Deneme";
-            writerManager.Add(writer);
-            return RedirectToAction("Index", "Blog");
+            //validation
+            WriterValidator validationRules = new WriterValidator();
+            ValidationResult result = validationRules.Validate(writer);
+
+            if (result.IsValid)
+            {
+                writer.WriterStatus = true;
+                writer.WriterAbout = "Deneme";
+                writerManager.Add(writer);
+                return RedirectToAction("Index", "Blog");
+            }
+            else
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+                }
+            }
+            return View();
         }
     }
 }
