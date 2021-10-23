@@ -38,6 +38,12 @@ namespace Buesiness.Concrete
             return _blogDal.GetById(id);
         }
 
+        public List<Blog> GetByWriter(int writerId)
+        {
+            
+            throw new NotImplementedException();
+        }
+
         public List<Blog> GetWithCategory()
         {
             return _blogDal.GetWithCategory();
