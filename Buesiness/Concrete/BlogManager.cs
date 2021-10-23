@@ -40,8 +40,7 @@ namespace Buesiness.Concrete
 
         public List<Blog> GetByWriter(int writerId)
         {
-            
-            throw new NotImplementedException();
+            return _blogDal.GetAll(x => x.WriterId == writerId);
         }
 
         public List<Blog> GetWithCategory()
