@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Buesiness.Concrete;
+using DataAccess.EntityFtramework;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,16 @@ namespace Presentation.Controllers
 {
     public class AboutController : Controller
     {
+        AboutManager aboutManager = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
-            return View();
+            var results = aboutManager.GetAll();
+
+            return View(results);
+        }
+        public PartialViewResult SocialMediaAbout()
+        {
+            return PartialView();
         }
     }
 }
