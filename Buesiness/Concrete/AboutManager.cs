@@ -18,9 +18,9 @@ namespace Buesiness.Concrete
             _aboutDal = aboutDal;
         }
 
-        public List<About> GetAll()
+        public List<About> GetAll2()
         {
-            return _aboutDal.GetAll();
+            return _aboutDal.GetAll2();
         }
     }
 }

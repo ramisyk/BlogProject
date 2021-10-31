@@ -9,5 +9,6 @@ namespace DataAccess.Abstract
 {
     public interface IAboutDal : IGenericDal<About>
     {
+        List<About> GetAll2();
     }
 }

@@ -13,7 +13,7 @@ namespace Presentation.Controllers
         AboutManager aboutManager = new AboutManager(new EfAboutRepository());
         public IActionResult Index()
         {
-            var results = aboutManager.GetAll();
+            var results = aboutManager.GetAll2();
 
             return View(results);
         }

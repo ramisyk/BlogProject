@@ -9,6 +9,6 @@ namespace Buesiness.Abstract
 {
     public interface IAboutService
     {
-        List<About> GetAll();
+        List<About> GetAll2();
     }
 }
